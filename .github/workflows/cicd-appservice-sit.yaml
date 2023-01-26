@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: sit
-
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout code
@@ -41,4 +42,4 @@ jobs:
     - name: Upload Artifact Release
       uses: softprops/action-gh-release@v0.1.15
       with:
-        files: ${{ github.workspace }}/Tutorial.Api/bin/Release/net6.0/${{ env.ARTIFACT_NAME }}-${{ env.RELEASE_VERSION }}.tar.gz
+        files: ${{ github.workspace }}/Tutorial.Api/bin/Release/net6.0/${{ env.ARTIFACT_NAME }}-${{ env.RELEASE_VERSION }}.tar.gzgit add
