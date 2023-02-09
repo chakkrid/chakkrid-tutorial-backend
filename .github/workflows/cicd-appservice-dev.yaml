@@ -83,7 +83,7 @@ jobs:
     needs: [unitest,analyze]
     environment:
       name: dev
-      url: https://github.com/chakkrid/chakkrid-tutorial-backend/actions/workflows/dev-tutorial-backend-deploy.yml
+      url: https://github.com/chakkrid/chakkrid-pipeline/actions/workflows/dev-tutorial-backend-deploy.yml
 
     steps:
     - name: Repository Dispatch
@@ -91,5 +91,5 @@ jobs:
       with:
         token: ${{ secrets.WORKFLOW_TOKEN }}
         repository: chakkrid/chakkrid-pipeline
-        event-type: chakkrid-tutorial-backend-cd-dev
+        event-type: chakkrid-tutorial-be-cd-dev
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
